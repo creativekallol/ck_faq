@@ -1,0 +1,49 @@
+plugin.tx_ckfaq_pi1 {
+    view {
+        templateRootPath.0 = EXT:ck_faq/Resources/Private/Templates/
+        templateRootPath.1 = {$plugin.tx_ckfaq_pi1.view.templateRootPath}
+        partialRootPath.0 = EXT:ck_faq/Resources/Private/Partials/
+        partialRootPath.1 = {$plugin.tx_ckfaq_pi1.view.partialRootPath}
+        layoutRootPath.0 = EXT:ck_faq/Resources/Private/Layouts/
+        layoutRootPath.1 = {$plugin.tx_ckfaq_pi1.view.layoutRootPath}
+    }
+
+    features {
+        skipDefaultArguments = 1
+        ignoreAllEnableFieldsInBe = 0
+        requireCHashArgumentForActionArguments = 0
+    }
+
+    mvc {
+        callDefaultActionIfActionCantBeResolved = 1
+    }
+
+    settings {
+        storagePid = {$plugin.tx_ckfaq_pi1.settings.storagePid}
+        categoryParent = {$plugin.tx_ckfaq_pi1.settings.categoryParent}
+        itemsPerPage = {$plugin.tx_ckfaq_pi1.settings.itemsPerPage}
+    }
+}
+
+api_rating = PAGE
+api_rating {
+  config {
+    disableAllHeaderCode = 1
+    xhtml_cleaning = 0
+    admPanel = 0
+    debug = 0
+    no_cache = 1
+  }
+
+  typeNum = 11556633
+
+  10 = USER
+  10 {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = CkFaq
+    vendorName = Creativekallol
+    pluginName = RatingApi
+    controller = Faq
+    action = updateRating
+  }
+}

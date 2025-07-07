@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:ck_faq/Resources/Private/Language/locallang.xlf" date="2025-06-17T10:04:24Z" product-name="ck_faq">
+		<header/>
+		<body>
+			<trans-unit id="search.placeholderText" resname="search.placeholderText">
+				<source>How can we help you?</source>
+			</trans-unit>
+			<trans-unit id="search.btnLabel" resname="search.btnLabel">
+				<source>Search</source>
+			</trans-unit>
+			<trans-unit id="pagination.previous" resname="pagination.previous">
+				<source>Previous</source>
+			</trans-unit>
+			<trans-unit id="pagination.next" resname="pagination.next">
+				<source>Next</source>
+			</trans-unit>
+			<trans-unit id="sidebar.label.categories" resname="sidebar.label.categories">
+				<source>Categories</source>
+			</trans-unit>
+			<trans-unit id="sidebar.label.showAll" resname="sidebar.label.showAll">
+				<source>Show All</source>
+			</trans-unit>
+			<trans-unit id="body.label.wasHelpful" resname="body.label.wasHelpful">
+				<source>Was this article helpful?</source>
+			</trans-unit>
+			<trans-unit id="body.label.foundHelpful" resname="body.label.foundHelpful">
+				<source>You found this article helpful.</source>
+			</trans-unit>
+			<trans-unit id="body.label.foundNotHelpful" resname="body.label.foundNotHelpful">
+				<source>You found this article not helpful.</source>
+			</trans-unit>
+			<trans-unit id="body.label.noResult" resname="body.label.noResult">
+				<source>No result found. Try another search term or category.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

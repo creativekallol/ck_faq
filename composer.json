@@ -1,0 +1,25 @@
+{
+    "name": "creativekallol/ck-faq",
+    "type": "typo3-cms-extension",
+    "description": "Extension for managing and showcasing FAQ on the website frontend.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kallol Chakraborty",
+            "email": "kallolchakraborty@hotmail.com"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^13.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Creativekallol\\CkFaq\\": "Classes"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "ck_faq"
+        }
+    }
+}

@@ -1,0 +1,166 @@
+<nav class="mt-4">
+    <ul class="pagination">
+
+        <!-- Previous Page -->
+        <li class="page-item {f:if(condition: '!{pagination.previousPageNumber}', then: 'disabled')}">
+            <f:if condition="{demand.category}">
+                <f:then>
+                    <f:if condition="{demand.term}">
+                        <f:then>
+                            <f:link.action
+                                action="list"
+                                arguments="{currentPage: pagination.previousPageNumber, category: demand.category, term: demand.term}"
+                                class="page-link"
+                            >
+                                <f:translate key="pagination.previous" />
+                            </f:link.action>
+                        </f:then>
+                        <f:else>
+                            <f:link.action
+                                action="list"
+                                arguments="{currentPage: pagination.previousPageNumber, category: demand.category}"
+                                class="page-link"
+                            >
+                                <f:translate key="pagination.previous" />
+                            </f:link.action>
+                        </f:else>
+                    </f:if>
+                </f:then>
+                <f:else>
+                    <f:if condition="{demand.term}">
+                        <f:then>
+                            <f:link.action
+                                action="list"
+                                arguments="{currentPage: pagination.previousPageNumber, term: demand.term}"
+                                class="page-link"
+                            >
+                                <f:translate key="pagination.previous" />
+                            </f:link.action>
+                        </f:then>
+                        <f:else>
+                            <f:link.action
+                                action="list"
+                                arguments="{currentPage: pagination.previousPageNumber}"
+                                class="page-link"
+                            >
+                                <f:translate key="pagination.previous" />
+                            </f:link.action>
+                        </f:else>
+                    </f:if>
+                </f:else>
+            </f:if>
+        </li>
+
+        <!-- Page Numbers -->
+        <f:for each="{pagination.allPageNumbers}" as="page">
+            <li class="page-item{f:if(condition: '{currentPage} == {page}', then: ' active')}">
+                <f:if condition="{currentPage} == {page}">
+                    <f:then>
+                        <span class="page-link" style="cursor: pointer;">{page}</span>
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{demand.category}">
+                            <f:then>
+                                <f:if condition="{demand.term}">
+                                    <f:then>
+                                        <f:link.action
+                                            action="list"
+                                            arguments="{category: demand.category, currentPage: page, term: demand.term}"
+                                            class="page-link"
+                                        >
+                                            {page}
+                                        </f:link.action>
+                                    </f:then>
+                                    <f:else>
+                                        <f:link.action
+                                            action="list"
+                                            arguments="{category: demand.category, currentPage: page}"
+                                            class="page-link"
+                                        >
+                                            {page}
+                                        </f:link.action>
+                                    </f:else>
+                                </f:if>
+                            </f:then>
+                            <f:else>
+                                <f:if condition="{demand.term}">
+                                    <f:then>
+                                        <f:link.action
+                                            action="list"
+                                            arguments="{currentPage: page, term: demand.term}"
+                                            class="page-link"
+                                        >
+                                            {page}
+                                        </f:link.action>
+                                    </f:then>
+                                    <f:else>
+                                        <f:link.action
+                                            action="list"
+                                            arguments="{currentPage: page}"
+                                            class="page-link"
+                                        >
+                                            {page}
+                                        </f:link.action>
+                                    </f:else>
+                                </f:if>
+
+                            </f:else>
+                        </f:if>
+
+                    </f:else>
+                </f:if>
+            </li>
+        </f:for>
+
+        <!-- Next Page -->
+        <li class="page-item {f:if(condition: '!{pagination.nextPageNumber}', then: 'disabled')}">
+            <f:if condition="{demand.category}">
+                <f:then>
+                    <f:if condition="{demand.term}">
+                        <f:then>
+                            <f:link.action
+                                action="list"
+                                arguments="{currentPage: pagination.nextPageNumber, category: demand.category, term: demand.term}"
+                                class="page-link"
+                            >
+                                <f:translate key="pagination.next" />
+                            </f:link.action>
+                        </f:then>
+                        <f:else>
+                            <f:link.action
+                                action="list"
+                                arguments="{currentPage: pagination.nextPageNumber, category: demand.category}"
+                                class="page-link"
+                            >
+                                <f:translate key="pagination.next" />
+                            </f:link.action>
+                        </f:else>
+                    </f:if>
+                </f:then>
+                <f:else>
+                    <f:if condition="{demand.term}">
+                        <f:then>
+                            <f:link.action
+                                action="list"
+                                arguments="{currentPage: pagination.nextPageNumber, term: demand.term}"
+                                class="page-link"
+                            >
+                                <f:translate key="pagination.next" />
+                            </f:link.action>
+                        </f:then>
+                        <f:else>
+                            <f:link.action
+                                action="list"
+                                arguments="{currentPage: pagination.nextPageNumber}"
+                                class="page-link"
+                            >
+                                <f:translate key="pagination.next" />
+                            </f:link.action>
+                        </f:else>
+                    </f:if>
+                </f:else>
+            </f:if>
+        </li>
+
+    </ul>
+</nav>

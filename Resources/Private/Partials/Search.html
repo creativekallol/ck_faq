@@ -1,0 +1,15 @@
+<f:form action="list" class="row mb-4">
+    <div class="col-md-9">
+        <f:form.textfield
+            name="term"
+            value="{demand.term}"
+            class="form-control"
+            placeholder="{f:translate(key: 'search.placeholderText')}" />
+        <f:form.hidden name="category" value="{demand.category}" />
+    </div>
+    <div class="col-md-3">
+        <f:form.button type="submit" class="btn btn-dark w-100">
+            <f:translate key="search.btnLabel" />
+        </f:form.button>
+    </div>
+</f:form>

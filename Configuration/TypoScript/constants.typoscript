@@ -1,0 +1,18 @@
+plugin.tx_ckfaq_pi1 {
+    view {
+        # cat=FAQ/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:ck_faq/Resources/Private/Templates/
+        # cat=FAQ/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:ck_faq/Resources/Private/Partials/
+        # cat=FAQ/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:ck_faq/Resources/Private/Layouts/
+    }
+    settings {
+        # cat=FAQ//a; type=int; label=Storage Page ID – if left empty, records will be fetched from all pages
+        storagePid =
+        # cat=FAQ//a; type=int; label=Parent Category UID – if not set, all categories will be listed
+        categoryParent =
+        # cat=FAQ//a; type=int; label=Number of items per page – if not specified, a default value will be used
+        itemsPerPage =
+    }
+}

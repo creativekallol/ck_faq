@@ -1,0 +1,12 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Creativekallol\CkFaq\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+
+  Creativekallol\CkFaq\Service\CategoryService: ~
+  Creativekallol\CkFaq\Service\FaqService: ~

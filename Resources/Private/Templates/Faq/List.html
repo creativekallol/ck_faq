@@ -1,0 +1,120 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+{namespace ckfaq=Creativekallol\CkFaq\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="content">
+
+    <f:asset.css identifier="bs-min" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <f:asset.css identifier="bs-ico" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <f:asset.css identifier="faq-custom-css" href="EXT:ck_faq/Resources/Public/Css/Faq.css" />
+
+    <div class="container my-5">
+
+        <!-- Search Row -->
+        <div class="row">
+            <div class="col-md-9">
+                <f:render partial="Search" arguments="{_all}" />
+            </div>
+            <div class="col-md-3">
+                <f:comment>Silence</f:comment>
+            </div>
+        </div>
+
+        <!-- Content Row -->
+        <div class="row">
+
+            <!-- FAQ Section -->
+            <div class="col-md-9">
+                <div class="accordion" id="faqAccordion">
+                    <f:for each="{pagination.paginator.paginatedItems}" as="faq" iteration="i">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading-{faq.uid}">
+                                <button class="accordion-button {f:if(condition: '!{i.isFirst}', then: 'collapsed')}"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapse-{faq.uid}"
+                                        aria-expanded="{f:if(condition: i.isFirst, then: 'true', else: 'false')}">
+                                    <f:format.html>{faq.title}</f:format.html>
+                                </button>
+                            </h2>
+                            <div id="collapse-{faq.uid}"
+                                 class="accordion-collapse collapse {f:if(condition: i.isFirst, then: 'show')}"
+                                 aria-labelledby="heading-{faq.uid}"
+                                 data-bs-parent="#faqAccordion">
+                                <div class="accordion-body p-1">
+                                    <div class="accordion-content-wrapper p-4">
+                                        <f:format.html>{faq.description}</f:format.html>
+                                    </div>
+
+                                    <f:variable name="rating" value="{ckfaq:faqRating(faqId: faq.uid)}" />
+
+                                    <div class="faq-feedback pe-2 pb-2">
+                                        <f:if condition="{rating}">
+                                            <f:then>
+                                                <f:if condition="{rating} == 'i'">
+                                                    <span class="helpful"><f:translate key="body.label.foundHelpful" /></span>
+                                                </f:if>
+                                                <f:if condition="{rating} == 'd'">
+                                                    <span class="not-helpful"><f:translate key="body.label.foundNotHelpful" /></span>
+                                                </f:if>
+                                            </f:then>
+                                            <f:else>
+                                                <span class="was-helpful"><f:translate key="body.label.wasHelpful" /></span>
+                                                <span class="helpful d-none"><f:translate key="body.label.foundHelpful" /></span>
+                                                <span class="not-helpful d-none"><f:translate key="body.label.foundNotHelpful" /></span>
+                                            </f:else>
+                                        </f:if>
+
+                                        <f:if condition="{rating} == 'i'">
+                                            <f:then>
+                                                <i class="btn btn-outline-secondary btn-sm bi bi-hand-thumbs-up active"></i>
+                                                <i class="btn btn-outline-secondary btn-sm bi bi-hand-thumbs-down d-none"></i>
+                                            </f:then>
+                                            <f:else>
+                                                <f:if condition="{rating} == 'd'">
+                                                    <f:then>
+                                                        <i class="btn btn-outline-secondary btn-sm bi bi-hand-thumbs-up d-none"></i>
+                                                        <i class="btn btn-outline-secondary btn-sm bi bi-hand-thumbs-down active"></i>
+                                                    </f:then>
+                                                    <f:else>
+                                                        <i class="btn btn-outline-secondary btn-sm bi bi-hand-thumbs-up"></i>
+                                                        <i class="btn btn-outline-secondary btn-sm bi bi-hand-thumbs-down"></i>
+                                                    </f:else>
+                                                </f:if>
+                                            </f:else>
+                                        </f:if>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </f:for>
+
+                    <f:if condition="{faqCount} == 0">
+                        <div id="noResults" class="text-center py-5">
+                            <p class="text-muted">
+                                <f:translate key="body.label.noResult" />
+                            </p>
+                        </div>
+                    </f:if>
+                </div>
+
+                <!-- Pagination -->
+                <f:if condition="{pagination.paginator.numberOfPages} > 1">
+                    <f:render partial="Pagination" arguments="{_all}" />
+                </f:if>
+            </div>
+
+            <!-- Categories Section -->
+            <div class="col-md-3 faq-sidebar">
+                <f:render partial="Categories" arguments="{_all}" />
+            </div>
+
+        </div>
+    </div>
+
+    <f:asset.script identifier="bs-bundle-min" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" nonce="{f:security.nonce()}" />
+    <f:asset.script identifier="faq-custom-js" src="EXT:ck_faq/Resources/Public/JavaScript/Faq.js" nonce="{f:security.nonce()}" />
+
+</f:section>
+</html>
