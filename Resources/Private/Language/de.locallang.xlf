@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="de" datatype="plaintext" original="EXT:ck_faq/Resources/Private/Language/locallang.xlf" date="2025-06-17T10:04:24Z" product-name="ck_faq">
+        <header/>
+        <body>
+            <trans-unit id="search.placeholderText" resname="search.placeholderText">
+                <source>How can we help you?</source>
+                <target>Wie können wir Ihnen helfen?</target>
+            </trans-unit>
+            <trans-unit id="search.btnLabel" resname="search.btnLabel">
+                <source>Search</source>
+                <target>Suche</target>
+            </trans-unit>
+            <trans-unit id="pagination.previous" resname="pagination.previous">
+                <source>Previous</source>
+                <target>Zurück</target>
+            </trans-unit>
+            <trans-unit id="pagination.next" resname="pagination.next">
+                <source>Next</source>
+                <target>Weiter</target>
+            </trans-unit>
+            <trans-unit id="sidebar.label.categories" resname="sidebar.label.categories">
+                <source>Categories</source>
+                <target>Kategorien</target>
+            </trans-unit>
+            <trans-unit id="sidebar.label.showAll" resname="sidebar.label.showAll">
+                <source>Show All</source>
+                <target>Alle anzeigen</target>
+            </trans-unit>
+            <trans-unit id="body.label.wasHelpful" resname="body.label.wasHelpful">
+                <source>Was this article helpful?</source>
+                <target>War dieser Artikel hilfreich?</target>
+            </trans-unit>
+            <trans-unit id="body.label.foundHelpful" resname="body.label.foundHelpful">
+                <source>You found this article helpful.</source>
+                <target>Sie fanden diesen Artikel hilfreich.</target>
+            </trans-unit>
+            <trans-unit id="body.label.foundNotHelpful" resname="body.label.foundNotHelpful">
+                <source>You found this article not helpful.</source>
+                <target>Sie fanden diesen Artikel nicht hilfreich.</target>
+            </trans-unit>
+            <trans-unit id="body.label.noResult" resname="body.label.noResult">
+                <source>No result found. Try another search term or category.</source>
+                <target>Keine Ergebnisse gefunden. Versuchen Sie es mit einem anderen Suchbegriff oder einer anderen Kategorie.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

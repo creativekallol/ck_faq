@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="EXT:ck_faq/Resources/Private/Language/locallang_db.xlf" date="2022-09-17T10:00:26Z" product-name="ck_faq">
+        <header/>
+        <body>
+            <trans-unit id="tx_ckfaq_domain_model_records" resname="tx_ckfaq_domain_model_records">
+                <source>FAQ Records</source>
+                <target>FAQ-Einträge</target>
+            </trans-unit>
+            <trans-unit id="tx_ckfaq_domain_model_records.title" resname="tx_ckfaq_domain_model_records.title">
+                <source>Title</source>
+                <target>Titel</target>
+            </trans-unit>
+            <trans-unit id="tx_ckfaq_domain_model_records.description" resname="tx_ckfaq_domain_model_records.description">
+                <source>Description</source>
+                <target>Beschreibung</target>
+            </trans-unit>
+            <trans-unit id="tx_ckfaq_domain_model_records.count_helpful" resname="tx_ckfaq_domain_model_records.count_helpful">
+                <source>Count - Helpful</source>
+                <target>Anzahl - Hilfreich</target>
+            </trans-unit>
+            <trans-unit id="tx_ckfaq_domain_model_records.count_not_helpful" resname="tx_ckfaq_domain_model_records.count_not_helpful">
+                <source>Count - Not Helpful</source>
+                <target>Anzahl - Nicht hilfreich</target>
+            </trans-unit>
+            <trans-unit id="tx_ckfaq_domain_model_records.category" resname="tx_ckfaq_domain_model_records.category">
+                <source>Category</source>
+                <target>Kategorie</target>
+            </trans-unit>
+            <trans-unit id="tx_ckfaq_pi1.name" resname="tx_ckfaq_pi1.name">
+                <source>FAQ (Frequently Asked Questions)</source>
+                <target>FAQ (Häufig gestellte Fragen)</target>
+            </trans-unit>
+            <trans-unit id="tx_ckfaq_pi1.description" resname="tx_ckfaq_pi1.description">
+                <source>This plugin displays a list of FAQ in the frontend.</source>
+                <target>Dieses Plugin zeigt eine Liste von FAQs im Frontend an.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
